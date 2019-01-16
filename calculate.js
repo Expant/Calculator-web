@@ -1,30 +1,32 @@
 
 // Здесь хранятся идентификаторы чисел
-let sevenItem        = document.getElementById("sevenItem");
-let eightItem        = document.getElementById("eightItem");
-let nineItem         = document.getElementById("nineItem");
-let fourItem         = document.getElementById("fourItem");
-let fiveItem         = document.getElementById("fiveItem");
-let sixItem          = document.getElementById("sixItem");
-let oneItem          = document.getElementById("oneItem");
-let twoItem          = document.getElementById("twoItem");
-let threeItem        = document.getElementById("threeItem");
-let zeroItem         = document.getElementById("zeroItem");
-let fractionalItem   = document.getElementById("fractionalItem");
-let enterValue       = document.querySelector("#enterValue");
+let
+  sevenItem        = document.getElementById("sevenItem"),
+  eightItem        = document.getElementById("eightItem"),
+  nineItem         = document.getElementById("nineItem"),
+  fourItem         = document.getElementById("fourItem"),
+  fiveItem         = document.getElementById("fiveItem"),
+  sixItem          = document.getElementById("sixItem"),
+  oneItem          = document.getElementById("oneItem"),
+  twoItem          = document.getElementById("twoItem"),
+  threeItem        = document.getElementById("threeItem"),
+  zeroItem         = document.getElementById("zeroItem"),
+  fractionalItem   = document.getElementById("fractionalItem"),
+  enterValue       = document.querySelector("#enterValue");
 
 // Идентификатор формы
-let mainForm         = document.getElementById("mainForm");          
+let mainForm         = document.getElementById("mainForm");
 
 // Идентификатор очистки (clear id)
 let clearItem        = document.getElementById("clearItem");
 
-// Здесь хранятся идентификаторы операторов  
-let multiplacationItem     = document.getElementById("multiplacationItem");
-let subtractionItem        = document.getElementById("subtractionItem");
-let additionItem           = document.getElementById("additionItem");
-let divisionItem           = document.getElementById("divisionItem");
-let equallyItem            = document.getElementById("equallyItem");
+// Здесь хранятся идентификаторы операторов
+let
+  multiplacationItem     = document.getElementById("multiplacationItem"),
+  subtractionItem        = document.getElementById("subtractionItem"),
+  additionItem           = document.getElementById("additionItem"),
+  divisionItem           = document.getElementById("divisionItem"),
+  equallyItem            = document.getElementById("equallyItem");
 
 mainForm.onsubmit = function(e) {
     e.preventDefault();
@@ -32,81 +34,81 @@ mainForm.onsubmit = function(e) {
 }
 
 function getOperations() {
-	
-    if (logValAddition == true) {
+
+    if (logValAddition) {
         enterValue.value = firstValue + secValue;
         logValAddition = false;
-    }    
+    }
 
-    if (logValSubtraction == true) {
+    if (logValSubtraction) {
         enterValue.value = firstValue - secValue;
         logValSubtraction = false;
-    }    
+    }
 
-    if (logValMultiplacation == true) {
+    if (logValMultiplacation) {
         enterValue.value = firstValue * secValue;
         logValMultiplacation = false;
-    }    
+    }
 
-    if (logValDivision == true) {
+    if (logValDivision) {
         enterValue.value = firstValue / secValue;
         logValDivision = false;
-    }    
-    
+    }
+
 }
 
-clearItem.onclick = function() { 
-    enterValue.value = ''; 
+clearItem.onclick = function() {
+    enterValue.value = '';
 }
 
 zeroItem.onclick = function() {
     let zero = "0";
-    enterValue.value += zero; 
+    enterValue.value += zero;
 }
 
 oneItem.onclick = function() {
     let one = "1";
-    enterValue.value += one; 
+    enterValue.value += one;
 }
 
 twoItem.onclick = function() {
     let two = "2";
-    enterValue.value += two; 
+    enterValue.value += two;
 }
 
 threeItem.onclick = function() {
     let three = "3";
-    enterValue.value += three; 
+    enterValue.value += three;
 }
 
 fourItem.onclick = function() {
     let four = "4";
-    enterValue.value += four; 
+    enterValue.value += four;
 }
 
 fiveItem.onclick = function() {
     let five = "5";
-    enterValue.value += five; 
+    enterValue.value += five;
 }
 
 sixItem.onclick = function() {
     let six = "6";
-    enterValue.value += six; 
+    enterValue.value += six;
 }
 
 sevenItem.onclick = function() {
     let seven = "7";
-    enterValue.value += seven; 
+    enterValue.value += seven;
 }
 
 eightItem.onclick = function() {
     let eight = "8";
-    enterValue.value += eight; 
+    enterValue.value += eight;
 }
 
 nineItem.onclick = function() {
     let nine = "9";
-    enterValue.value += nine; 
+    enterValue.value += nine;
 }
 
 fractionalItem.onclick = function() {
