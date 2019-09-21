@@ -1,6 +1,6 @@
 
 // Здесь хранятся идентификаторы чисел
-let
+const
   sevenItem        = document.getElementById("sevenItem"),
   eightItem        = document.getElementById("eightItem"),
   nineItem         = document.getElementById("nineItem"),
@@ -15,110 +15,105 @@ let
   enterValue       = document.querySelector("#enterValue");
 
 // Идентификатор формы
-let mainForm         = document.getElementById("mainForm");
+const mainForm         = document.getElementById("mainForm");
 
 // Идентификатор очистки (clear id)
-let clearItem        = document.getElementById("clearItem");
+const clearItem        = document.getElementById("clearItem");
 
 // Здесь хранятся идентификаторы операторов
-let
+const
   multiplacationItem     = document.getElementById("multiplacationItem"),
   subtractionItem        = document.getElementById("subtractionItem"),
   additionItem           = document.getElementById("additionItem"),
   divisionItem           = document.getElementById("divisionItem"),
   equallyItem            = document.getElementById("equallyItem");
 
-mainForm.onsubmit = function(e) {
+mainForm.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log('Отправка сброшена успешно!');
-}
+});
 
 function getOperations() {
 
-    if (logValAddition) {
-        enterValue.value = firstValue + secValue;
-        logValAddition = false;
-    }
+  if (logValAddition) {
+    enterValue.value = firstValue + secValue;
+    logValAddition = false;
+  }
 
-    if (logValSubtraction) {
-        enterValue.value = firstValue - secValue;
-        logValSubtraction = false;
-    }
+  if (logValSubtraction) {
+    enterValue.value = firstValue - secValue;
+    logValSubtraction = false;
+  }
 
-    if (logValMultiplacation) {
-        enterValue.value = firstValue * secValue;
-        logValMultiplacation = false;
-    }
+  if (logValMultiplacation) {
+    enterValue.value = firstValue * secValue;
+    logValMultiplacation = false;
+  }
 
-    if (logValDivision) {
-        enterValue.value = firstValue / secValue;
-        logValDivision = false;
-    }
+  if (logValDivision) {
+    enterValue.value = firstValue / secValue;
+    logValDivision = false;
+  }
 
 }
 
-clearItem.onclick = function() {
-    enterValue.value = '';
-}
+clearItem.addEventListener('click', () => enterValue.value = '');
 
-zeroItem.onclick = function() {
+zeroItem.onclick = () => {
     let zero = "0";
     enterValue.value += zero;
 }
 
-oneItem.onclick = function() {
+oneItem.onclick = () => {
     let one = "1";
     enterValue.value += one;
 }
 
-twoItem.onclick = function() {
+twoItem.onclick = () => {
     let two = "2";
     enterValue.value += two;
 }
 
-threeItem.onclick = function() {
+threeItem.onclick = () => {
     let three = "3";
     enterValue.value += three;
 }
 
-fourItem.onclick = function() {
+fourItem.onclick = () => {
     let four = "4";
     enterValue.value += four;
 }
 
-fiveItem.onclick = function() {
+fiveItem.onclick = () => {
     let five = "5";
     enterValue.value += five;
 }
 
-sixItem.onclick = function() {
+sixItem.onclick = () => {
     let six = "6";
     enterValue.value += six;
 }
 
-sevenItem.onclick = function() {
+sevenItem.onclick = () => {
     let seven = "7";
     enterValue.value += seven;
 }
 
-eightItem.onclick = function() {
+eightItem.onclick = () => {
     let eight = "8";
     enterValue.value += eight;
 }
 
-nineItem.onclick = function() {
+nineItem.onclick = () => {
     let nine = "9";
     enterValue.value += nine;
 }
 
-fractionalItem.onclick = function() {
-
-	if (enterValue.value.charAt(0) != '.') {
-
-   		enterValue.value += '.';
-
-	}
-}
+fractionalItem.addEventListener('click', () => {
+  if (enterValue.value.charAt(0) != '.') {
+    enterValue.value += '.';
+  }
+});  
 
 let firstValue = 0;
 let secValue   = 0;
@@ -129,48 +124,46 @@ let logValMultiplacation   = false;
 let logValDivision         = false;
 
 
-additionItem.onclick = function() {
+additionItem.addEventListener('click', () => {
+	firstValue = +enterValue.value;
+  logValAddition = true;
+  enterValue.value = '';
 
-    firstValue = +enterValue.value;
-    logValAddition = true;
-    enterValue.value = '';
+  console.log(logValAddition);
+  console.log(firstValue);
 
-    console.log(logValAddition);
-    console.log(firstValue);
-}
+}); 
 
-subtractionItem.onclick = function() {
+subtractionItem.addEventListener('click', () => {
+	firstValue = +enterValue.value;
+	logValSubtraction = true;
+	enterValue.value = '';
 
-    firstValue = +enterValue.value;
-    logValSubtraction = true;
-    enterValue.value = '';
+	console.log(logValSubtraction);
+	console.log(firstValue);
+});
 
-    console.log(logValSubtraction);
-    console.log(firstValue);
-}
+multiplacationItem.addEventListener('click', () => {
+	firstValue = +enterValue.value;
+  logValMultiplacation = true;
+  enterValue.value = '';
 
-multiplacationItem.onclick = function() {
+  console.log(logValMultiplacation);
+  console.log(firstValue);
+});
 
-    firstValue = +enterValue.value;
-    logValMultiplacation = true;
-    enterValue.value = '';
+divisionItem.addEventListener('click', () => {
+	firstValue = +enterValue.value;
+  logValDivision = true;
+  enterValue.value = '';
 
-    console.log(logValMultiplacation);
-    console.log(firstValue);
-}
+  console.log(logValDivision);
+  console.log(firstValue);
+}); 
+  
+equallyItem.addEventListener('click', () => {
+	secValue = +enterValue.value;
 
-divisionItem.onclick = function() {
-
-    firstValue = +enterValue.value;
-    logValDivision = true;
-    enterValue.value = '';
-
-    console.log(logValDivision);
-    console.log(firstValue);
-}
-
-equallyItem.onclick = function() {
-    secValue = +enterValue.value;
-
-    getOperations();
-}
+  getOperations();
+}); 
+  
